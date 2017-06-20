@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/17/XSS/index.html">
 <meta property="og:site_name" content="Yookie's blog">
 <meta property="og:description" content="XSS是跨站脚本攻击，在客户端发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端进行解析后并响应，XSS代码随着响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。">
-<meta property="og:updated_time" content="2017-06-20T07:01:24.635Z">
+<meta property="og:updated_time" content="2017-06-20T07:32:41.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XSS">
 <meta name="twitter:description" content="XSS是跨站脚本攻击，在客户端发出请求时，XSS代码出现在URL中，作为输入提交到服务器端，服务器端进行解析后并响应，XSS代码随着响应内容一起传回给浏览器，最后浏览器解析执行XSS代码。">
@@ -185,11 +185,8 @@
 <li>过滤</li>
 <li>校正</li>
 </ol>
-<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>在后端对XSS代码进行编码<br>“    =&gt; &quot;<br>&amp;    =&gt;&amp;<br>&lt;    =&gt;&lt;</p>
-<blockquote>
-<p>   =&gt;&gt;<br>空格 =&gt;&nbsp;”<br>这样做的目的是，服务器把XSS代码发送给浏览器的时候,浏览器先进行HTML解码，然后<br>进行Javascript解码，如果不进行编码的话，比如：浏览器解析到script的时候，会<br>直接加载并引入js代码，所以进行编码，这样HTML解析得到的只是script这几个字符<br>而不是标签。</p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>在后端对XSS代码进行编码<br>“    =&gt; &quot;<br>&amp;    =&gt;&amp;<br>&lt;    =&gt;&lt;<br>>    =&gt;&gt;<br>空格 =&gt;&nbsp;<br>这样做的目的是，服务器把XSS代码发送给浏览器的时候,浏览器先进行HTML解码，然后<br>进行Javascript解码，如果不进行编码的话，比如：浏览器解析到script的时候，会<br>直接加载并引入js代码，所以进行编码，这样HTML解析得到的只是script这几个字符<br>而不是标签。</p>
 <h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><p>在这一步是 对敏感标签进行过滤，比如script,iframe,frame,style.等，同时对标签内的属性进行过滤，比如：onclick，onerror.<br>这里用到了html parse这个插件</p>
-</blockquote>
 
       
 
@@ -405,11 +402,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">javaScript</a>
               </li>
              
               <li class="article-tag-list-item">
