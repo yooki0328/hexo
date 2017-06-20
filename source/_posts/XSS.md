@@ -27,8 +27,8 @@ nodejs后端: 返回给浏览器:{XSS:req.query.XSS}
 "    => &quot;
 &    =>&amp;
 <    =>&lt;
->    =>&gt;
-空格 =>&nbsp;"
+\>    =>&gt;
+空格 =>&nbsp;
 这样做的目的是，服务器把XSS代码发送给浏览器的时候,浏览器先进行HTML解码，然后
 进行Javascript解码，如果不进行编码的话，比如：浏览器解析到script的时候，会
 直接加载并引入js代码，所以进行编码，这样HTML解析得到的只是script这几个字符
